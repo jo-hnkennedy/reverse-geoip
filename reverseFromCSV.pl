@@ -1,18 +1,28 @@
 use warnings;
 use strict;
 
-use Text::CSV;
+use Text::CSV_XS;
 
-my $csvFile = $ARGV[0]; #THIS SHOULD BE THE BLOCK FILE
+my $csvFile;
+my $postalCode;
+
+if ($ARGV[0] =~ /^[\d-]+$/) { #if zip code
+	$postalCode = $ARGV[0];
+	$csvFile = "GeoLite2-City-Blocks-IPv4.csv";
+}
+
+else { #then argv[1] 
+	$csvFile = $ARGV[0]; #THIS SHOULD BE THE BLOCK FILE
+	$postalCode = $ARGV[1];
+}
 
 my $startTime = time;
 
-my $postalCode = $ARGV[1];
 
 #straight from meta cpan
 
-my $csv = Text::CSV->new ( { binary => 1 } )  # should set binary attribute.
-                or die "Cannot use CSV: ".Text::CSV->error_diag ();
+my $csv = Text::CSV_XS->new ( { binary => 1 } )  # should set binary attribute.
+                or die "Cannot use CSV: ".Text::CSV_XS->error_diag ();
 
 open my $fh, "<$csvFile" or die $!;
 
