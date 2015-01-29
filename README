@@ -6,7 +6,7 @@ zip code is highest free accuracy available - best combination of accuracy but n
 
 works with the compressed CSV files, compressed for github's sake
 
-RUNNING LOCALLY WITH CSV: very slow, expect 5 minute search times
+RUNNING LOCALLY WITH CSV: moderate time, <30 seconds to parsing 80mb sql file 
 
 RUNNING LOCALLY WITH SQL: faster, <1 second, added .pl files to create SQLite files
 
