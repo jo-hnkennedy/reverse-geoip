@@ -1,0 +1,12 @@
+reverse geo ip - finds ip address blocks connected with a specific zip code with the maxmind geoip database
+
+uses the free geoip2 downloadable databases
+
+zip code is highest free accuracy available - best combination of accuracy but not an overload of results
+
+works with the compressed CSV files, compressed for github's sake
+
+RUNNING LOCALLY WITH CSV: very slow, expect 5 minute search times
+
+RUNNING LOCALLY WITH SQL: faster, <1 second, added .pl files to create SQLite files
+
