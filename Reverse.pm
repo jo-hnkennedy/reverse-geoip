@@ -80,8 +80,6 @@ sub reverse {
 	}
 
 	
-	my $startTime = time;
-
 
 	#straight from meta cpan
 
